@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.CategoryFragment">
+    tools:context="food.order.delivery.online.offers.deals.coupons.view.fragment.CategoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -21,25 +21,24 @@
             <LinearLayout
                 android:id="@+id/llSuperMarts"
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_weight="2"
+                android:background="@drawable/card_bg_primary"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
-                android:background="@drawable/card_bg_primary">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_supermarket"
-                    app:tint="@color/colorPrimary" />
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/chinese" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/super_mart"
-                    android:textSize="12sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:text="@string/chinese"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -55,19 +54,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_grocery"
-                    app:tint="@color/colorPrimary" />
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/thali"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/groceries"
+                    android:text="@string/thali"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -88,19 +86,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_medicine"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/gulab_jamun"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/medicines"
+                    android:text="@string/dessert"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -118,19 +115,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_protein_supplement"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nonveg"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/supplements"
+                    android:text="@string/nonveg"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -151,19 +147,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_device"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/southindian"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/electronics"
+                    android:text="@string/southindian"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -181,19 +176,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_product"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/fastfood"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/beauty"
+                    android:text="@string/fastfood"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -227,19 +221,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_jewelry"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bakery" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/jewellery"
+                    android:text="@string/bakery"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -257,19 +250,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_kitchen_utensils"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/italian"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/kitchen_appliances"
+                    android:text="@string/italian"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp" />
 
@@ -290,19 +282,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_child"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/beverages"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/kids_lifestyle"
+                    android:text="@string/beverages"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -320,19 +311,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_unicorn"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/veg"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/baby_toys"
+                    android:text="@string/veg"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -353,19 +343,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_lingerie"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/seafood"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lingerie"
+                    android:text="@string/seafood"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -383,19 +372,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_boxers"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/northindian"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/men_inner_wear"
+                    android:text="@string/northindian"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -416,19 +404,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_book"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/mexican"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/books"
+                    android:text="@string/mexican"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -446,19 +433,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_footwear"
-                    app:tint="@color/colorPrimary"/>
+                    android:layout_width="180dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/thai"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/footwear"
+                    android:text="@string/thai"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 

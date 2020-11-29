@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    tools:context="food.order.delivery.online.offers.deals.coupons.view.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="6">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/view_pager_tab"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="5"
             android:elevation="10dp"
             app:tabBackground="@color/white"
             app:tabGravity="fill"
@@ -27,15 +28,27 @@
             android:theme="@style/TabLayout_Theme"
             app:tabTextAppearance="@style/tab_text" />
 
+        <ImageView
+            android:id="@+id/trending_apps"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="usefulAppsButton"
+            android:src="@drawable/trending"
+            app:tint="@color/colorPrimary"
+            android:background="@color/white"/>
+
+
     </LinearLayout>
 
 
-    <shopping.grocery.medicine.online.deals.coupons.compare.buy.utils.CustomViewPager
+    <food.order.delivery.online.offers.deals.coupons.utils.CustomViewPager
         android:id="@+id/vpPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </shopping.grocery.medicine.online.deals.coupons.compare.buy.utils.CustomViewPager>
+    </food.order.delivery.online.offers.deals.coupons.utils.CustomViewPager>
 
 
 </LinearLayout>

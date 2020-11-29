@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping Crate</string>
+    <string name="app_name">Food Crate</string>
     <string name="facebook_app_id">722413805027589</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -13,19 +13,21 @@
     <string name="top_trending">Top Trending Deals</string>
     <string name="account_statement">Account Statement</string>
     <string name="all_apps">All Apps</string>
-    <string name="super_mart">Super Marts</string>
-    <string name="groceries">Groceries</string>
-    <string name="medicines">Medicines</string>
-    <string name="supplements">Supplements</string>
-    <string name="electronics">Electronics</string>
-    <string name="jewellery">Jewellery</string>
-    <string name="kitchen_appliances">Kitchen Appliances</string>
-    <string name="kids_lifestyle">Kids Lifestyle</string>
-    <string name="baby_toys">Baby Toys</string>
-    <string name="lingerie">Lingerie</string>
-    <string name="men_inner_wear">Men\'s Inner Wear</string>
-    <string name="books">Books</string>
-    <string name="footwear">Footwear</string>
-    <string name="beauty">Beauty</string>
+    <string name="chinese">Chinese</string>
+    <string name="thali">Thali</string>
+    <string name="dessert">Dessert</string>
+    <string name="nonveg">Non Veg</string>
+    <string name="southindian">South Indian</string>
+    <string name="bakery">Bakery</string>
+    <string name="italian">Italian</string>
+    <string name="usefulapps">Most Useful Apps</string>
+    <string name="hotdeals">Hot Deals</string>
+    <string name="beverages">Beverages</string>
+    <string name="veg">Vegetarian</string>
+    <string name="seafood">Seafood</string>
+    <string name="northindian">North Indian</string>
+    <string name="mexican">Mexican</string>
+    <string name="thai">Thai</string>
+    <string name="fastfood">Fast Food</string>
     <string name="ad">Ad</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.WebActivity">
+    tools:context="food.order.delivery.online.offers.deals.coupons.view.WebActivity">
 
     <WebView
         android:id="@+id/webViewMain"
@@ -33,7 +33,7 @@
             android:id="@+id/ivAppIcon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/app_logo"
             android:layout_centerInParent="true"/>
 
         <ProgressBar

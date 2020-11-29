@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "382459289952",
-    "firebase_url": "https://shopping-crate.firebaseio.com",
-    "project_id": "shopping-crate",
-    "storage_bucket": "shopping-crate.appspot.com"
+    "project_number": "465609903979",
+    "firebase_url": "https://food-crate-6d207.firebaseio.com",
+    "project_id": "food-crate-6d207",
+    "storage_bucket": "food-crate-6d207.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:382459289952:android:884f3d0081333632dcfe05",
+        "mobilesdk_app_id": "1:465609903979:android:6fd7fb06dcc19d823f862e",
         "android_client_info": {
-          "package_name": "shopping.grocery.medicine.online.deals.coupons.compare.buy"
+          "package_name": "food.order.delivery.online.offers.deals.coupons"
         }
       },
       "oauth_client": [
         {
-          "client_id": "382459289952-ngd47gslg4d9londc2rrqk4d81m9rnt5.apps.googleusercontent.com",
+          "client_id": "465609903979-4dktvgts1ka6b514jvattttk69p88h58.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDdX1pz2bBXYlZFHqlAWUI83v0_j2xOuFg"
+          "current_key": "AIzaSyDOMN71LUwroDWmIy-nImxWikJ2vWgCz9Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "382459289952-ngd47gslg4d9londc2rrqk4d81m9rnt5.apps.googleusercontent.com",
+              "client_id": "465609903979-4dktvgts1ka6b514jvattttk69p88h58.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
