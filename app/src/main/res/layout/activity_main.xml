@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:padding="10dp"
             android:onClick="usefulAppsButton"
             android:src="@drawable/trending"
             app:tint="@color/colorPrimary"

@@ -1,19 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "shopping.grocery.medicine.online.deals.coupons.compare.buy",
-  "variantName": "release",
+  "applicationId": "food.order.delivery.online.offers.deals.coupons",
+  "variantName": "processReleaseResources",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "properties": [],
       "versionCode": 2,
       "versionName": "1.0.1",
-      "enabled": true,
       "outputFile": "app-release.apk"
     }
   ]
