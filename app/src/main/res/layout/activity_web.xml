@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="food.order.delivery.online.offers.deals.coupons.view.WebActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.WebActivity">
 
-    <WebView
-        android:id="@+id/webViewMain"
+    <RelativeLayout
+        android:id="@+id/mainContainer"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="FULL_BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-    </com.google.android.gms.ads.AdView>
+        <WebView
+            android:id="@+id/webViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/banner_container"/>
 
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fullScreenContainer"
+        android:visibility="gone"/>
 
     <RelativeLayout
         android:id="@+id/rlWebSplash"
@@ -33,7 +43,7 @@
             android:id="@+id/ivAppIcon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/app_logo"
+            android:src="@drawable/food_crate"
             android:layout_centerInParent="true"/>
 
         <ProgressBar
@@ -44,5 +54,4 @@
             android:layout_marginBottom="20dp"/>
 
     </RelativeLayout>
-
-</RelativeLayout>
+</FrameLayout>

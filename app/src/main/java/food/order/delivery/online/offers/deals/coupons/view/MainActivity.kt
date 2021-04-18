@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.onesignal.OneSignal
 import food.order.delivery.online.offers.deals.coupons.base.BaseActivity
 import food.order.delivery.online.offers.deals.coupons.buy.BuildConfig
 import food.order.delivery.online.offers.deals.coupons.buy.R
@@ -22,6 +23,7 @@ import food.order.delivery.online.offers.deals.coupons.utils.CustomViewPager
 import food.order.delivery.online.offers.deals.coupons.utils.ForceUpdateChecker
 import food.order.delivery.online.offers.deals.coupons.view.adapter.UsefulAppsAdapter
 import food.order.delivery.online.offers.deals.coupons.view.listener.UsefulAppsClickListener
+import food.order.delivery.online.offers.deals.coupons.viewmodel.CantonentViewModel
 import food.order.delivery.online.offers.deals.coupons.viewmodel.CategoryViewModel
 import food.order.delivery.online.offers.deals.coupons.viewmodel.DealsViewModel
 import food.order.delivery.online.offers.deals.coupons.viewmodel.HomeViewModel
@@ -37,6 +39,7 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
     var fragmentPagerAdapter: FragmentPagerAdapter ?= null
     var homeViewModel: HomeViewModel? = null
     var dealsViewModel: DealsViewModel? = null
+    var cantonentViewModel: CantonentViewModel? = null
     var categoryViewModel: CategoryViewModel? = null
     var firebaseAnalytics: FirebaseAnalytics? = null
 
@@ -58,11 +61,10 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
         setupViewPager()
 
         ForceUpdateChecker().with(this)!!.onUpdateNeeded(this).check()
-
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         dealsViewModel = ViewModelProvider(this).get(DealsViewModel::class.java)
         categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
-
+        cantonentViewModel = ViewModelProvider(this).get(CantonentViewModel::class.java)
         homeViewModel!!.loadData()
 
         homeViewModel!!.usefulappsLiveData.observe(this, Observer { t ->
@@ -82,6 +84,7 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+        checkRoute()
 
     }
 
@@ -90,6 +93,20 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
         viewPager = findViewById(R.id.vpPager)
         viewPagerTab = findViewById(R.id.view_pager_tab)
     }
+    fun checkRoute(){
+        val bundle: Bundle? = intent.extras
+        val route = bundle?.getString("route")
+        val url = bundle?.getString("url")
+        if(route == "website"){
+            val intent = Intent(
+                this,
+                WebActivity::class.java
+            )
+            intent.putExtra("url",url)
+            startActivity(intent)
+        }
+    }
+
 
     fun usefulAppsButton(view: View) {
         val dialog = Dialog(this, R.style.DialogTheme)
@@ -115,7 +132,7 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
         viewPager!!.adapter = fragmentPagerAdapter
         val limit = if ((fragmentPagerAdapter as AppPagerAdapter).getCount() > 1) (fragmentPagerAdapter as AppPagerAdapter).getCount() - 1 else 1
         viewPager!!.offscreenPageLimit = limit;
-        viewPager!!.currentItem = 1;
+        viewPager!!.currentItem = 2;
 
         viewPager!!.setSwipePagingEnabled(false)
 
@@ -127,6 +144,7 @@ class MainActivity : BaseActivity(), ForceUpdateChecker.OnUpdateNeededListener,
         homeViewModel?.reset()
         dealsViewModel?.reset()
         categoryViewModel?.reset()
+        cantonentViewModel?.reset()
         super.onDestroy()
     }
 

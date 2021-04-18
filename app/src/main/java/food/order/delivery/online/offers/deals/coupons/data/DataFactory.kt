@@ -25,6 +25,16 @@ class DataFactory {
     val URL_MEXICAN = BASE_URL + "1usrl_RWgReSBbwR8hXS2KZ9UJ9VTsmIkBvZibv4QgCs/values/Sheet1!A2:E/"
     val URL_THAI = BASE_URL + "1sqmDx8Mgw8uddYRu8qnzu8dsPetAmJeghkwKLNVIGW0/values/Sheet1!A2:E/"
     val URL_USEFUL_APP = BASE_URL + "1rJWZ1hzbKKhm9p_2RSGLNHca2ep4GlFp6qG_r0x4w3Y/values/Sheet1!A2:D/"
+
+    //Contonent
+    val URL_AFRICAN = BASE_URL + "1EhnlUgrvcL-TlM1NfWGo-USAg7iDgzQEBWbbnIJCoRY/values/Sheet1!A2:E/"
+    val URL_ANTARCTICA = BASE_URL + "1OJoifJuedoqiTqvClCQyDZItJMn0KH3hQ6wqUmXcxV0/values/Sheet1!A2:E/"
+    val URL_ASIAN = BASE_URL + "17TBnUKKo5pCl0uVXHPOUpHXWy40M2JJukO3iAHkxL9w/values/Sheet1!A2:E/"
+    val URL_EUROPIAN = BASE_URL + "1GiL2_tiThlEol2af8Tt0HqRCAmqq4FzeEByKWK9jHBw/values/Sheet1!A2:E/"
+    val URL_NORTH_AMERICA = BASE_URL + "16U1AgWc4ce-Lux3h78izQOZ9pgVRp-ZRbR-tukvmnQk/values/Sheet1!A2:E/"
+    val URL_SOUTH_AMERICA = BASE_URL + "1CzDy8xos1xZux6aigvzJLmbVzGNoAI1WGtoCAYYQAAk/values/Sheet1!A2:E/"
+    val URL_AUSTRALIAN = BASE_URL + "1_HsCzLGiCoVGGdgT321Kmej7OY91AA5JkBENQP53pwg/values/Sheet1!A2:E/"
+    val URL_VIDEO = BASE_URL + "1e01vtf6X1ueM3tppq70MeqSmAxz4A1rAiDJE6ZRMpHo/values/Sheet1!A2:E/"
     val KEY = "AIzaSyDOMN71LUwroDWmIy-nImxWikJ2vWgCz9Y"
 
     companion object{

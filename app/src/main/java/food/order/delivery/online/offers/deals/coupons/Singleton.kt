@@ -7,6 +7,7 @@ import com.facebook.ads.AudienceNetworkAds
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.onesignal.OneSignal
 import food.order.delivery.online.offers.deals.coupons.data.DataFactory
 import food.order.delivery.online.offers.deals.coupons.data.DataService
 import food.order.delivery.online.offers.deals.coupons.utils.Constants
@@ -15,12 +16,13 @@ import io.reactivex.Scheduler
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
 import food.order.delivery.online.offers.deals.coupons.buy.BuildConfig
+import food.order.delivery.online.offers.deals.coupons.utils.AppNotificationOpenHandler
 import java.util.*
 
 class Singleton : Application() {
     private var dataService: DataService? = null
     private var scheduler: Scheduler? = null
-
+    private val ONESIGNAL_APP_ID ="494ef3c7-6cd4-4aea-9c6b-87423f88a051"
     companion object{
 
         var application: Singleton? = null
@@ -41,6 +43,14 @@ class Singleton : Application() {
                 "onCreate: " + throwable.message
             )
         }
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this)
+        OneSignal.setAppId(ONESIGNAL_APP_ID)
+        OneSignal.setNotificationOpenedHandler(AppNotificationOpenHandler(this))
+
+
 
         AudienceNetworkAds.initialize(this);
         if(BuildConfig.DEBUG){

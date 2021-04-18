@@ -2,13 +2,14 @@ package food.order.delivery.online.offers.deals.coupons.viewpager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import food.order.delivery.online.offers.deals.coupons.view.fragment.CantonantFragment
 import food.order.delivery.online.offers.deals.coupons.view.fragment.CategoryFragment
 import food.order.delivery.online.offers.deals.coupons.view.fragment.FragmentHome
 import food.order.delivery.online.offers.deals.coupons.view.fragment.DealFragment
 
 class AppPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-    val NUM_ITEMS = 3;
+    val NUM_ITEMS = 4;
 
     override fun getCount(): Int {
         return NUM_ITEMS
@@ -20,9 +21,12 @@ class AppPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(f
                 return DealFragment.newInstance(position, "Deals")
             }
             1 -> {
-                return FragmentHome.newInstance(position, "Home")
+                return CantonantFragment.newInstance(position, "Deals")
             }
             2 -> {
+                return FragmentHome.newInstance(position, "Home")
+            }
+            3 -> {
                 return CategoryFragment.newInstance(position, "Category")
             }
 
@@ -35,9 +39,12 @@ class AppPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(f
         if (position == 0) {
             title = "Deals"
         } else if (position == 1) {
-            title = "Home"
+            title = "Recipe"
         }
         else if (position == 2) {
+            title = "Home"
+        }
+        else if (position == 3) {
             title = "Category"
         }
         return title

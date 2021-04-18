@@ -38,6 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/chinese"
+                    android:textStyle="bold"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -67,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/thali"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -99,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dessert"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -128,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/nonveg"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -152,14 +156,15 @@
 
                 <ImageView
                     android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/southindian"/>
+                    android:layout_height="136dp"
+                    android:src="@drawable/southindian" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/southindian"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -189,6 +194,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/fastfood"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -208,6 +214,20 @@
                 android:layout_marginBottom="12dp"/>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.ads.NativeAdLayout
+                android:id="@+id/native_ad_container_cat_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -234,6 +254,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/bakery"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -263,6 +284,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/italian"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp" />
 
             </LinearLayout>
@@ -295,6 +317,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/beverages"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -324,6 +347,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/veg"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -356,6 +380,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/seafood"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -384,6 +409,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/northindian"
+                    android:textStyle="bold"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -417,6 +443,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/mexican"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -445,6 +472,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/thai"
+                    android:textStyle="bold"
                     android:textSize="12sp"
                     android:layout_marginTop="10dp"/>
 
@@ -466,6 +494,20 @@
                 android:layout_marginBottom="12dp"/>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.ads.NativeAdLayout
+                android:id="@+id/native_ad_container_cat_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                />
+        </LinearLayout>
+
 
 
     </LinearLayout>

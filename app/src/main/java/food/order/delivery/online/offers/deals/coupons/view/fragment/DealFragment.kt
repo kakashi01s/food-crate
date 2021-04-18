@@ -1,5 +1,6 @@
 package food.order.delivery.online.offers.deals.coupons.view.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
@@ -7,14 +8,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.facebook.ads.*
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import food.order.delivery.online.offers.deals.coupons.buy.R
+import food.order.delivery.online.offers.deals.coupons.utils.Constants
 import food.order.delivery.online.offers.deals.coupons.view.MainActivity
 import food.order.delivery.online.offers.deals.coupons.view.WebActivity
 import food.order.delivery.online.offers.deals.coupons.view.adapter.DealsAdapter
@@ -42,6 +49,10 @@ class DealFragment : Fragment(), CouponInfoClickListener, DealClickListener {
     var dealsViewModel: DealsViewModel? = null
     var investDataList: ArrayList<List<String>>? = ArrayList()
     var firebaseAnalytics: FirebaseAnalytics? = null
+    var firebaseRemoteConfig: FirebaseRemoteConfig? = null
+    private var nativeAdFB1: NativeAd? = null
+    private var nativeAdLayout: NativeAdLayout? = null
+    private var adView: LinearLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +88,20 @@ class DealFragment : Fragment(), CouponInfoClickListener, DealClickListener {
         })
 
     }
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+
+        if(isVisibleToUser){
+            if(firebaseRemoteConfig == null){
+                firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+            }
+            if (firebaseRemoteConfig!!.getBoolean(Constants().SHOW_ADS)) {
+                onLoadFBNativeAd1(view!!, context!!)
+                }
+        }
+
+    }
+
 
     fun initViews(view: View){
         firebaseAnalytics = FirebaseAnalytics.getInstance(activity!!)
@@ -110,6 +135,94 @@ class DealFragment : Fragment(), CouponInfoClickListener, DealClickListener {
             }
         }
     }
+    fun onLoadFBNativeAd1(view: View, context: Context) {
+        nativeAdFB1 = NativeAd(context, Constants().getFbNativeInvest())
+        val nativeAdListener: NativeAdListener = object : NativeAdListener {
+            override fun onError(p0: Ad?, p1: AdError?) {
+                Log.d("TAG", "onError: onLoadFBNativeAd1 " + p1!!.errorMessage)
+            }
+
+            override fun onAdLoaded(ad: Ad?) {
+
+                // Race condition, load() called again before last ad was displayed
+                if (nativeAdFB1 == null || nativeAdFB1 !== ad) {
+                    return
+                }
+                // Inflate Native Ad into Container
+
+                // Add the Ad view into the ad container.
+                nativeAdLayout = view.findViewById(R.id.native_ad_container_invest)
+                val inflater = LayoutInflater.from(context)
+                // Inflate the Ad view.  The layout referenced should be the one you created in the last step.
+                adView =
+                    inflater.inflate(
+                        R.layout.native_ad_layout,
+                        nativeAdLayout,
+                        false
+                    ) as LinearLayout
+                nativeAdLayout!!.addView(adView)
+
+                inflateAd(nativeAdFB1!!, adView!!)
+
+                val adChoicesContainer: LinearLayout = view.findViewById(R.id.ad_choices_container)
+                val adOptionsView = AdOptionsView(context, nativeAdFB1, nativeAdLayout)
+                adChoicesContainer.removeAllViews()
+                adChoicesContainer.addView(adOptionsView, 0)
+            }
+
+            override fun onAdClicked(p0: Ad?) {
+                Log.d("TAG", "onAdClicked: onLoadFBNativeAd1")
+            }
+
+            override fun onLoggingImpression(p0: Ad?) {
+                Log.d("TAG", "onLoggingImpression: onLoadFBNativeAd1")
+            }
+
+            override fun onMediaDownloaded(p0: Ad?) {
+                Log.d("TAG", "onMediaDownloaded: onLoadFBNativeAd1")
+            }
+        }
+
+        nativeAdFB1!!.loadAd(
+            nativeAdFB1!!.buildLoadAdConfig()
+                .withAdListener(nativeAdListener)
+                .build()
+        );
+    }
+    private fun inflateAd(nativeAd: NativeAd, adView: LinearLayout) {
+        nativeAd.unregisterView()
+
+        // Add the AdOptionsView
+
+        // Create native UI using the ad metadata.
+        val nativeAdIcon: com.facebook.ads.MediaView = adView.findViewById(R.id.native_ad_icon)
+        val nativeAdTitle: TextView = adView.findViewById(R.id.native_ad_title)
+        val nativeAdMedia: com.facebook.ads.MediaView = adView.findViewById(R.id.native_ad_media)
+        val nativeAdSocialContext: TextView = adView.findViewById(R.id.native_ad_social_context)
+        val nativeAdBody: TextView = adView.findViewById(R.id.native_ad_body)
+        val sponsoredLabel: TextView = adView.findViewById(R.id.native_ad_sponsored_label)
+        val nativeAdCallToAction: Button = adView.findViewById(R.id.native_ad_call_to_action)
+
+        // Set the Text.
+        nativeAdTitle.text = nativeAd.advertiserName
+        nativeAdBody.text = nativeAd.adBodyText
+        nativeAdSocialContext.text = nativeAd.adSocialContext
+        nativeAdCallToAction.visibility =
+            if (nativeAd.hasCallToAction()) View.VISIBLE else View.INVISIBLE
+        nativeAdCallToAction.text = nativeAd.adCallToAction
+        sponsoredLabel.text = nativeAd.sponsoredTranslation
+
+        // Create a list of clickable views
+        val clickableViews: ArrayList<View> = ArrayList()
+        clickableViews.add(nativeAdTitle)
+        clickableViews.add(nativeAdCallToAction)
+
+        // Register the Title and CTA button to listen for clicks.
+        nativeAd.registerViewForInteraction(
+            adView, nativeAdMedia, nativeAdIcon, clickableViews
+        )
+    }
+
 
 
     override fun onDestroy() {
