@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="food.order.delivery.online.offers.deals.coupons.view.fragment.CategoryFragment">
+   >
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -19,27 +18,27 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llSuperMarts"
+                android:id="@+id/llIndia"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="@drawable/card_bg_primary"
-                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/chinese" />
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/india_flag" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/chinese"
+                    android:text="@string/india"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:textSize="12sp" />
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
@@ -49,25 +48,25 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llGroceries"
+                android:id="@+id/llUsa"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/thali"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/usa_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/thali"
-                    android:textSize="12sp"
+                    android:text="@string/usa"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -82,25 +81,25 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llMedicines"
+                android:id="@+id/llRussia"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/gulab_jamun"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/russia_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dessert"
-                    android:textSize="12sp"
+                    android:text="@string/russia"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -112,25 +111,25 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llSupplements"
+                android:id="@+id/llPakistan"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/nonveg"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/pakistan_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nonveg"
-                    android:textSize="12sp"
+                    android:text="@string/pakistan"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -145,25 +144,25 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llElectronics"
+                android:id="@+id/llChina"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="136dp"
-                    android:src="@drawable/southindian" />
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/newzealand"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/southindian"
-                    android:textSize="12sp"
+                    android:text="New Zealand"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -175,25 +174,25 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llBeauty"
+                android:id="@+id/llGermany"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/fastfood"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/germany_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fastfood"
-                    android:textSize="12sp"
+                    android:text="@string/germany"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -202,18 +201,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <FrameLayout
-                android:id="@+id/ad_frame_cat_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"/>
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -226,6 +213,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 />
+
         </LinearLayout>
 
 
@@ -235,25 +223,25 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llJewellery"
+                android:id="@+id/llTurkey"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/bakery" />
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/turkey_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bakery"
-                    android:textSize="12sp"
+                    android:text="@string/turkey"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -265,25 +253,25 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llKitchenAppliances"
+                android:id="@+id/llUae"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/italian"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/uae_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/italian"
-                    android:textSize="12sp"
+                    android:text="@string/uae"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp" />
 
@@ -298,25 +286,25 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llKidsLifestyle"
+                android:id="@+id/llItaly"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/beverages"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/italy_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/beverages"
-                    android:textSize="12sp"
+                    android:text="@string/italy"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -328,25 +316,25 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llBabyToys"
+                android:id="@+id/llSwitzerland"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/veg"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/switzerland_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/veg"
-                    android:textSize="12sp"
+                    android:text="@string/switzerland"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -361,25 +349,25 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/llLingerie"
+                android:id="@+id/llCanada"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/seafood"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/canada_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/seafood"
-                    android:textSize="12sp"
+                    android:text="@string/canada"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
@@ -391,107 +379,30 @@
                 android:layout_height="wrap_content"/>
 
             <LinearLayout
-                android:id="@+id/llMenInnerWear"
+                android:id="@+id/llSingapore"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:background="@drawable/card_bg_primary">
 
                 <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/northindian"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/singapore_flag"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/northindian"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_marginTop="10dp"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <LinearLayout
-                android:id="@+id/llBooks"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:padding="10dp"
-                android:background="@drawable/card_bg_primary">
-
-                <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/mexican"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mexican"
-                    android:textSize="12sp"
+                    android:text="@string/singapore"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:id="@+id/llFootwear"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:padding="10dp"
-                android:background="@drawable/card_bg_primary">
-
-                <ImageView
-                    android:layout_width="180dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/thai"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/thai"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_marginTop="10dp"/>
-
-            </LinearLayout>
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <FrameLayout
-                android:id="@+id/ad_frame_cat_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"/>
 
         </LinearLayout>
         <LinearLayout
@@ -506,8 +417,326 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/llSouthAfrica"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/south_africa_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/south_africa"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/llFrance"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/france_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/france"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/llIndonesia"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/indonesia_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/indonesia"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/llUk"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/uk_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/united_kingdom"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/llJapan"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/japan_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/japan"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/llBrazil"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/brazil_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/brazil"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.ads.NativeAdLayout
+                android:id="@+id/native_ad_container_cat_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/llNigeria"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/nigeria_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nigeria"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/llPortugal"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/portugal_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/portugul"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/llAustralia"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/australia_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/australia"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/llGreece"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="@drawable/card_bg_primary">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/greece_flag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/greece"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

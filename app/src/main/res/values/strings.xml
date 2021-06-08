@@ -30,4 +30,26 @@
     <string name="thai">Thai</string>
     <string name="fastfood">Fast Food</string>
     <string name="ad">Ad</string>
+    <string name="india">India</string>
+    <string name="usa">USA</string>
+    <string name="russia">Russia</string>
+    <string name="china">China</string>
+    <string name="pakistan">Pakistan</string>
+    <string name="italy">Italy</string>
+    <string name="uae">UAE</string>
+    <string name="turkey">Turkey</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="canada">Canada</string>
+    <string name="singapore">Singapore</string>
+    <string name="south_africa">South Africa</string>
+    <string name="france">France</string>
+    <string name="germany">Germany</string>
+    <string name="japan">Japan</string>
+    <string name="brazil">Brazil</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="united_kingdom">United Kingdom</string>
+    <string name="nigeria">Nigeria</string>
+    <string name="portugul">Portugul</string>
+    <string name="australia">Australia</string>
+    <string name="greece">Greece</string>
 </resources>

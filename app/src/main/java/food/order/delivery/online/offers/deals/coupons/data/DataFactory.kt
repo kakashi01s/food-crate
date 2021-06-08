@@ -35,6 +35,32 @@ class DataFactory {
     val URL_SOUTH_AMERICA = BASE_URL + "1CzDy8xos1xZux6aigvzJLmbVzGNoAI1WGtoCAYYQAAk/values/Sheet1!A2:E/"
     val URL_AUSTRALIAN = BASE_URL + "1_HsCzLGiCoVGGdgT321Kmej7OY91AA5JkBENQP53pwg/values/Sheet1!A2:E/"
     val URL_VIDEO = BASE_URL + "1e01vtf6X1ueM3tppq70MeqSmAxz4A1rAiDJE6ZRMpHo/values/Sheet1!A2:E/"
+
+
+
+
+    val URL_INDIA = BASE_URL + "1mWxgvXe-CTLs8Ubu96hEK5mNv45qMehIGm9J_4Xf3uY/values/Sheet1!A2:E/"
+    val URL_USA = BASE_URL + "1yw8vcHgHbX4FsjJ3-CVHBrHuNE2KBegDGsfRHXki5xg/values/Sheet1!A2:E/"
+    val URL_RUSSIA = BASE_URL + "1ZPgv8XOxgPK1pyqidh2YgbGXqA5NE-yaniQLSVXme_Q/values/Sheet1!A2:E/"
+    val URL_PAKISTAN = BASE_URL + "1q9UgCbJ6upR0QBa68jLEtax-GmoydTSxHs19AvzeY7A/values/Sheet1!A2:E/"
+    val URL_NEWZEALAND = BASE_URL + "1j4V1_uH94zp-ZvQ8wUl_FOaSNct2LuV2nUX0K7L9S24/values/Sheet1!A2:E/"
+    val URL_GERMANY = BASE_URL + "1rs05OEKR73SJZz0zfjJfdRUDc5Wf-CULyba-9nvExhc/values/Sheet1!A2:E/"
+    val URL_TURKEY = BASE_URL + "1wQ97jPkeBQLy7P3G1yMt67Igshe9ak2wVEqboJ42s04/values/Sheet1!A2:E/"
+    val URL_UAE = BASE_URL + "1otEjwznt7h_OJt8pyaVqax7mTjo0IRG-1c4ntAYnLnA/values/Sheet1!A2:E/"
+    val URL_ITALY = BASE_URL + "1Ldz48RvmBP2g7dpQpdDBsCHan39cXny6bLKW61k4v1M/values/Sheet1!A2:E/"
+    val URL_SWITZERLAND = BASE_URL + "1zI7rRaXYl6OxbNembmHW0Oq1Y2XV165hZwUtI0K6OkQ/values/Sheet1!A2:E/"
+    val URL_CANADA = BASE_URL + "1fxvM5X6Bwv51mVHKKD1zm3aK4I_QPwyrQ7cbRr2Q4uM/values/Sheet1!A2:E/"
+    val URL_SINGAPORE = BASE_URL + "1DAcg8OXnUHz05rCcV6Pn0z-hSjKbWxT17icFYnFkkZM/values/Sheet1!A2:E/"
+    val URL_SOUTH_AFRICA = BASE_URL + "1XyiwwzBAsgHao6BRZRb30u2_SWZ0DxSjGI_UmWMxoWY/values/Sheet1!A2:E/"
+    val URL_FRANCE = BASE_URL + "1eh-CQQLqwvEsaIQU2JpiopBlNqxgxmQrJbxB424UYtE/values/Sheet1!A2:E/"
+    val URL_INDONECIA = BASE_URL + "1xLSP-LFq_Ky9hPbILNyaEoJan2AVIs3NPJ8bNHarF_A/values/Sheet1!A2:E/"
+    val URL_UK = BASE_URL + "1wz0Y2DX-wYaTGKd9lhn4OUBDHj9VeRTl0tPW_BULKDY/values/Sheet1!A2:E/"
+    val URL_JAPAN = BASE_URL + "1VFNDfH4vZALFwVD_d_ydkDKYXcZ79W4aCxBUcS0Oe0g/values/Sheet1!A2:E/"
+    val URL_BRAZIL = BASE_URL + "1OkSpKILsV5e1mCXAVtSW2nynogfMEfgW7_mQUxk8GkQ/values/Sheet1!A2:E/"
+    val URL_NIGERIA = BASE_URL + "1RJqcac5eJU13m-q5LDKI1-7dkTx5gk6oAVNI8YR5UQk/values/Sheet1!A2:E/"
+    val URL_PORTUGAL = BASE_URL + "1Wkt6x1zxYOBqRzLDjJdOKnGTCWhwsL0_TsWsZmUyixs/values/Sheet1!A2:E/"
+    val URL_GREECE = BASE_URL + "1CZnAjgaHk7gUS_c5SYpbEkErbvMSErcT0AZQGjHIFio/values/Sheet1!A2:E/"
+    val URL_AUSTRALIA = BASE_URL + "13-UOxJrJWkTdwVfc-waYUSaQUvA-UdHWlQmvifKzffc/values/Sheet1!A2:E/"
     val KEY = "AIzaSyDOMN71LUwroDWmIy-nImxWikJ2vWgCz9Y"
 
     companion object{

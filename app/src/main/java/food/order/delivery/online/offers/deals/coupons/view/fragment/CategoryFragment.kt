@@ -61,36 +61,52 @@ class CategoryFragment : BaseFragment(), CategoryStoresItemClickListener<List<St
     var nativeAdCat2: UnifiedNativeAd? = null
     var nativeAdCatDailog: UnifiedNativeAd? = null
 
-    var llSuperMarts: LinearLayout? = null
-    var llGroceries: LinearLayout? = null
-    var llMedicines: LinearLayout? = null
-    var llSupplements: LinearLayout? = null
-    var llElectronics: LinearLayout? = null
-    var llBeauty: LinearLayout? = null
-    var llJewellery: LinearLayout? = null
-    var llKitchenAppliances: LinearLayout? = null
-    var llKidsLifestyle: LinearLayout? = null
-    var llBabyToys: LinearLayout? = null
-    var llLingerie: LinearLayout? = null
-    var llMenInnerWear: LinearLayout? = null
-    var llBooks: LinearLayout? = null
-    var llFootwear: LinearLayout? = null
+    var llIndia: LinearLayout? = null
+    var llUsa: LinearLayout? = null
+    var llRussia: LinearLayout? = null
+    var llPakistan: LinearLayout? = null
+    var llNewzeaLand: LinearLayout? = null
+    var llGermany: LinearLayout? = null
+    var llTurkey: LinearLayout? = null
+    var llUae: LinearLayout? = null
+    var llItaly: LinearLayout? = null
+    var llSwitzerland: LinearLayout? = null
+    var llCanada: LinearLayout? = null
+    var llSingapore: LinearLayout? = null
+    var llSouthAfrica: LinearLayout? = null
+    var llFrance: LinearLayout? = null
+    var llIndonesia: LinearLayout? = null
+    var llUk: LinearLayout? = null
+    var llJapan: LinearLayout? = null
+    var llBrazil: LinearLayout? = null
+    var llNigeria: LinearLayout? = null
+    var llPortugal: LinearLayout? = null
+    var llAustralia: LinearLayout? = null
+    var llGreece: LinearLayout? = null
 
-    var superMartList: ArrayList<List<String>>? = ArrayList()
-    var groceriesList: ArrayList<List<String>>? = ArrayList()
-    var medicinesList: ArrayList<List<String>>? = ArrayList()
-    var supplementsList: ArrayList<List<String>>? = ArrayList()
-    var electronicsList: ArrayList<List<String>>? = ArrayList()
-    var beautyList: ArrayList<List<String>>? = ArrayList()
-    var jewelleryList: ArrayList<List<String>>? = ArrayList()
-    var kitchenAppliancesList: ArrayList<List<String>>? = ArrayList()
-    var kidsLifestyleList: ArrayList<List<String>>? = ArrayList()
-    var babyToysList: ArrayList<List<String>>? = ArrayList()
-    var lingerieList: ArrayList<List<String>>? = ArrayList()
-    var menInnerWearList: ArrayList<List<String>>? = ArrayList()
-    var booksList: ArrayList<List<String>>? = ArrayList()
-    var footwearList: ArrayList<List<String>>? = ArrayList()
 
+    var indiaList: ArrayList<List<String>>? = ArrayList()
+    var usaList: ArrayList<List<String>>? = ArrayList()
+    var russiaList: ArrayList<List<String>>? = ArrayList()
+    var pakistanList: ArrayList<List<String>>? = ArrayList()
+    var newzealandList: ArrayList<List<String>>? = ArrayList()
+    var germanyList: ArrayList<List<String>>? = ArrayList()
+    var turkeyList: ArrayList<List<String>>? = ArrayList()
+    var uaeList: ArrayList<List<String>>? = ArrayList()
+    var italyList: ArrayList<List<String>>? = ArrayList()
+    var switzerlandList: ArrayList<List<String>>? = ArrayList()
+    var canadaList: ArrayList<List<String>>? = ArrayList()
+    var singaporeList: ArrayList<List<String>>? = ArrayList()
+    var southAfricaList: ArrayList<List<String>>? = ArrayList()
+    var franceList: ArrayList<List<String>>? = ArrayList()
+    var indonesiaList: ArrayList<List<String>>? = ArrayList()
+    var ukList: ArrayList<List<String>>? = ArrayList()
+    var japanList: ArrayList<List<String>>? = ArrayList()
+    var brazilList: ArrayList<List<String>>? = ArrayList()
+    var nigeriaList: ArrayList<List<String>>? = ArrayList()
+    var portugalList: ArrayList<List<String>>? = ArrayList()
+    var australiaList: ArrayList<List<String>>? = ArrayList()
+    var greeceList: ArrayList<List<String>>? = ArrayList()
 
     var dialog: Dialog? = null
 //
@@ -130,113 +146,176 @@ class CategoryFragment : BaseFragment(), CategoryStoresItemClickListener<List<St
         categoryViewModel = ViewModelProvider(activity!!).get(CategoryViewModel::class.java)
         categoryViewModel?.loadData()
 
-        categoryViewModel!!.superMartLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: superMartLiveData $t")
-            superMartList!!.addAll(t!!)
+        categoryViewModel!!.indiaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: indiaLiveData $t")
+            indiaList!!.addAll(t!!)
         })
 
-        categoryViewModel!!.groceriesLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: groceriesLiveData $t")
-            groceriesList!!.addAll(t!!)
+        categoryViewModel!!.usaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: usaLiveData $t")
+            usaList!!.addAll(t!!)
         })
-        categoryViewModel!!.medicinesLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: medicinesLiveData $t")
-            medicinesList!!.addAll(t!!)
-        })
-
-        categoryViewModel!!.supplementsLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: supplementsLiveData $t")
-            supplementsList!!.addAll(t!!)
-        })
-        categoryViewModel!!.electronicsLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: electronicsLiveData $t")
-            electronicsList!!.addAll(t!!)
+        categoryViewModel!!.russiaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: russiaLiveData $t")
+            russiaList!!.addAll(t!!)
         })
 
-        categoryViewModel!!.beautyLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: beautyLiveData $t")
-            beautyList!!.addAll(t!!)
+        categoryViewModel!!.pakistanLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: pakistanLiveData $t")
+            pakistanList!!.addAll(t!!)
         })
-        categoryViewModel!!.jewelleryLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: jewelleryLiveData $t")
-            jewelleryList!!.addAll(t!!)
-        })
-
-        categoryViewModel!!.kitchenAppliancesLiveData
-            .observe(this, Observer { t ->
-                Log.d("TAG", "onViewCreated: kitchenAppliancesLiveData $t")
-                kitchenAppliancesList!!.addAll(t!!)
-            })
-        categoryViewModel!!.kidsLifestyleLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: kidsLifestyleLiveData $t")
-            kidsLifestyleList!!.addAll(t!!)
+        categoryViewModel!!.newzealandLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: chinaLiveData $t")
+            newzealandList!!.addAll(t!!)
         })
 
-        categoryViewModel!!.babyToysLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: babyToysLiveData $t")
-            babyToysList!!.addAll(t!!)
+        categoryViewModel!!.germanyLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: germanyLiveData $t")
+            germanyList!!.addAll(t!!)
         })
-        categoryViewModel!!.lingerieLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: lingerieLiveData $t")
-            lingerieList!!.addAll(t!!)
-        })
-
-        categoryViewModel!!.menInnerWearLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: menInnerWearLiveData $t")
-            menInnerWearList!!.addAll(t!!)
-        })
-        categoryViewModel!!.booksLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: booksLiveData $t")
-            booksList!!.addAll(t!!)
+        categoryViewModel!!.turkeyLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: turkeyLiveData $t")
+            turkeyList!!.addAll(t!!)
         })
 
-        categoryViewModel!!.footwearLiveData.observe(this, Observer { t ->
-            Log.d("TAG", "onViewCreated: footwearLiveData $t")
-            footwearList!!.addAll(t!!)
+        categoryViewModel!!.uaeLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: uaeLiveData $t")
+            uaeList!!.addAll(t!!)
+        })
+        categoryViewModel!!.italyLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: italyLiveData $t")
+            italyList!!.addAll(t!!)
         })
 
+        categoryViewModel!!.switzerlandLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: switzerlandLiveData $t")
+            switzerlandList!!.addAll(t!!)
+        })
+        categoryViewModel!!.canadaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: canadaLiveData $t")
+            canadaList!!.addAll(t!!)
+        })
 
-        llSuperMarts!!.setOnClickListener {
-            onShowStores(superMartList!!,view)
+        categoryViewModel!!.singaporeLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: singaporeLiveData $t")
+            singaporeList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.southAfricaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: southAfricaLiveData $t")
+            southAfricaList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.franceLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: franceLiveData $t")
+            franceList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.indonesiaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: indonesiaLiveData $t")
+            indonesiaList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.ukLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: ukLiveData $t")
+            ukList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.japanLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: japanLiveData $t")
+            japanList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.brazilLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: brazilLiveData $t")
+            brazilList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.nigeriaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: nigeriaLiveData $t")
+            nigeriaList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.portugalLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: portugalLiveData $t")
+            portugalList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.australiaLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: australiaLiveData $t")
+            australiaList!!.addAll(t!!)
+        })
+
+        categoryViewModel!!.greeceLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "onViewCreated: greeceLiveData $t")
+            greeceList!!.addAll(t!!)
+        })
+
+        llIndia!!.setOnClickListener {
+            onShowStores(indiaList!!,view)
         }
-        llGroceries!!.setOnClickListener {
-            onShowStores(groceriesList!!,view)
+        llUsa!!.setOnClickListener {
+            onShowStores(usaList!!,view)
         }
-        llMedicines!!.setOnClickListener {
-            onShowStores(medicinesList!!,view)
+        llRussia!!.setOnClickListener {
+            onShowStores(russiaList!!,view)
         }
-        llSupplements!!.setOnClickListener {
-            onShowStores(supplementsList!!,view)
+        llPakistan!!.setOnClickListener {
+            onShowStores(pakistanList!!,view)
         }
-        llElectronics!!.setOnClickListener {
-            onShowStores(electronicsList!!,view)
+        llNewzeaLand!!.setOnClickListener {
+            onShowStores(newzealandList!!,view)
         }
-        llBeauty!!.setOnClickListener {
-            onShowStores(beautyList!!,view)
+        llGermany!!.setOnClickListener {
+            onShowStores(germanyList!!,view)
         }
-        llJewellery!!.setOnClickListener {
-            onShowStores(jewelleryList!!,view)
+        llTurkey!!.setOnClickListener {
+            onShowStores(turkeyList!!,view)
         }
-        llKitchenAppliances!!.setOnClickListener {
-            onShowStores(kitchenAppliancesList!!,view)
+        llUae!!.setOnClickListener {
+            onShowStores(uaeList!!,view)
         }
-        llKidsLifestyle!!.setOnClickListener {
-            onShowStores(kidsLifestyleList!!,view)
+        llItaly!!.setOnClickListener {
+            onShowStores(italyList!!,view)
         }
-        llBabyToys!!.setOnClickListener {
-            onShowStores(babyToysList!!,view)
+        llSwitzerland!!.setOnClickListener {
+            onShowStores(switzerlandList!!,view)
         }
-        llLingerie!!.setOnClickListener {
-            onShowStores(lingerieList!!,view)
+        llCanada!!.setOnClickListener {
+            onShowStores(canadaList!!,view)
         }
-        llMenInnerWear!!.setOnClickListener {
-            onShowStores(menInnerWearList!!,view)
+        llSingapore!!.setOnClickListener {
+            onShowStores(singaporeList!!,view)
         }
-        llBooks!!.setOnClickListener {
-            onShowStores(booksList!!,view)
+        llSouthAfrica!!.setOnClickListener {
+            onShowStores(southAfricaList!!,view)
         }
-        llFootwear!!.setOnClickListener {
-            onShowStores(footwearList!!,view)
+        llFrance!!.setOnClickListener {
+            onShowStores(franceList!!,view)
+        }
+        llIndonesia!!.setOnClickListener {
+            onShowStores(indonesiaList!!,view)
+        }
+        llUk!!.setOnClickListener {
+            onShowStores(ukList!!,view)
+        }
+        llJapan!!.setOnClickListener {
+            onShowStores(japanList!!,view)
+        }
+        llBrazil!!.setOnClickListener {
+            onShowStores(brazilList!!,view)
+        }
+        llNigeria!!.setOnClickListener {
+            onShowStores(nigeriaList!!,view)
+        }
+        llPortugal!!.setOnClickListener {
+            onShowStores(portugalList!!,view)
+        }
+        llAustralia!!.setOnClickListener {
+            onShowStores(australiaList!!,view)
+        }
+        llGreece!!.setOnClickListener {
+            onShowStores(greeceList!!,view)
         }
 
 
@@ -261,20 +340,30 @@ class CategoryFragment : BaseFragment(), CategoryStoresItemClickListener<List<St
 
     fun initViews(view: View) {
         firebaseAnalytics = FirebaseAnalytics.getInstance(activity!!)
-        llSuperMarts = view.findViewById(R.id.llSuperMarts)
-        llGroceries = view.findViewById(R.id.llGroceries)
-        llMedicines = view.findViewById(R.id.llMedicines)
-        llSupplements = view.findViewById(R.id.llSupplements)
-        llElectronics = view.findViewById(R.id.llElectronics)
-        llBeauty = view.findViewById(R.id.llBeauty)
-        llJewellery = view.findViewById(R.id.llJewellery)
-        llKitchenAppliances = view.findViewById(R.id.llKitchenAppliances)
-        llKidsLifestyle = view.findViewById(R.id.llKidsLifestyle)
-        llBabyToys = view.findViewById(R.id.llBabyToys)
-        llLingerie = view.findViewById(R.id.llLingerie)
-        llMenInnerWear = view.findViewById(R.id.llMenInnerWear)
-        llBooks = view.findViewById(R.id.llBooks)
-        llFootwear = view.findViewById(R.id.llFootwear)
+
+        llIndia = view.findViewById(R.id.llIndia)
+        llUsa = view.findViewById(R.id.llUsa)
+        llRussia = view.findViewById(R.id.llRussia)
+        llPakistan = view.findViewById(R.id.llPakistan)
+        llNewzeaLand = view.findViewById(R.id.llChina)
+        llGermany = view.findViewById(R.id.llGermany)
+        llTurkey = view.findViewById(R.id.llTurkey)
+        llUae = view.findViewById(R.id.llUae)
+        llItaly = view.findViewById(R.id.llItaly)
+        llSwitzerland = view.findViewById(R.id.llSwitzerland)
+        llCanada = view.findViewById(R.id.llCanada)
+        llSingapore = view.findViewById(R.id.llSingapore)
+        llSouthAfrica = view.findViewById(R.id.llSouthAfrica)
+        llFrance = view.findViewById(R.id.llFrance)
+        llIndonesia = view.findViewById(R.id.llIndonesia)
+        llUk = view.findViewById(R.id.llUk)
+        llJapan = view.findViewById(R.id.llJapan)
+        llBrazil = view.findViewById(R.id.llBrazil)
+        llNigeria = view.findViewById(R.id.llNigeria)
+        llPortugal = view.findViewById(R.id.llPortugal)
+        llAustralia = view.findViewById(R.id.llAustralia)
+        llGreece = view.findViewById(R.id.llGreece)
+
 
     }
 

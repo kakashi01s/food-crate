@@ -37,7 +37,7 @@ class AppPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(f
     override fun getPageTitle(position: Int): CharSequence? {
         var title : String? = null;
         if (position == 0) {
-            title = "Deals"
+            title = "Finance"
         } else if (position == 1) {
             title = "Recipe"
         }
@@ -45,7 +45,7 @@ class AppPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(f
             title = "Home"
         }
         else if (position == 3) {
-            title = "Category"
+            title = "Global"
         }
         return title
     }

@@ -16,6 +16,7 @@ import io.reactivex.schedulers.Schedulers
 class HomeViewModel : ViewModel() {
 
     var allAppsLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
+    var usefulappsLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
     var carouselImagesLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
     var foodLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
     var shoppingLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
@@ -32,6 +33,29 @@ class HomeViewModel : ViewModel() {
         fetchshopping()
         fetchgrocery()
         fetchdeals()
+        fetchusefulapps()
+    }
+
+    private fun fetchusefulapps(){
+        Log.d("TAG", "fetchAllApps: ")
+        val singleton: Singleton? = Singleton.get()
+        val dataService: DataService? = singleton!!.getDataService()
+
+        val disposable: Disposable?
+        disposable = dataService?.fetchAllApps(DataFactory().URL_USEFUL_APP, DataFactory().KEY)
+            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(AndroidSchedulers.mainThread())
+            ?.doOnError(Consumer { t ->
+                Log.d("TAG", "fetchAllApps Error ${t.localizedMessage}")
+            })
+            ?.subscribe(Consumer { t ->
+                Log.d("TAG", "fetchAllApps Response ${t.getValues()}")
+                changeusefulDataSet(t.getValues())
+            })
+
+        if (disposable != null) {
+            compositeDisposable?.add(disposable)
+        }
     }
 
     private fun fetchfoodData(){
@@ -170,6 +194,9 @@ class HomeViewModel : ViewModel() {
     }
     fun changefoodDataSet(foodList: List<List<String>>?){
         foodLiveData.value = foodList
+    }
+    fun changeusefulDataSet(foodList: List<List<String>>?){
+        usefulappsLiveData.value = foodList
     }
 
 

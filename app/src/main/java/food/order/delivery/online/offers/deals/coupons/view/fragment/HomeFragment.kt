@@ -40,6 +40,7 @@ import food.order.delivery.online.offers.deals.coupons.view.adapter.CategoryStor
 import food.order.delivery.online.offers.deals.coupons.view.adapter.home.AllAppsAdapter
 import food.order.delivery.online.offers.deals.coupons.view.adapter.home.TrendingAdapter
 import food.order.delivery.online.offers.deals.coupons.view.listener.AllAppsItemClickListener
+import food.order.delivery.online.offers.deals.coupons.view.listener.CategoryStoresItemClickListener
 import food.order.delivery.online.offers.deals.coupons.view.listener.home.TrendingItemClickListener
 import food.order.delivery.online.offers.deals.coupons.viewmodel.CategoryViewModel
 import food.order.delivery.online.offers.deals.coupons.viewmodel.HomeViewModel
@@ -55,7 +56,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
-    TrendingItemClickListener<List<String>> {
+    TrendingItemClickListener<List<String>>, CategoryStoresItemClickListener<List<String>> {
     // TODO: Rename and change types of parameters
     private var param1: Int? = null
     private var param2: String? = null
@@ -198,10 +199,18 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
         trendingAdapter = TrendingAdapter(context)
         trendingAdapter!!.setListener(this)
         rvTrending.apply {
-            rvTrending?.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
+            rvTrending?.layoutManager =
+                LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
             rvTrending?.adapter = trendingAdapter
         }
 
+        categoryStoresAdapter = CategoryStoresAdapter(context)
+        categoryStoresAdapter!!.setListener(this)
+        rvCategoryStores.apply {
+            rvCategoryStores?.layoutManager = GridLayoutManager(activity, 3)
+            rvCategoryStores?.adapter = categoryStoresAdapter
+
+        }
     }
     fun onShowStores(list: ArrayList<List<String>>, view: View) {
         dialog!!.setContentView(R.layout.dialog_show_stores)
@@ -514,6 +523,20 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
         (activity as MainActivity?)!!.onUpdateLogEvent(bundle, "trending_visited", true)
 
 
+        startActivity(intent)
+    }
+
+    override fun CategoryStoresCardClick(item: List<String>) {
+        Log.d("TAG", "onAllBrokersCardClick: " + item.get(1))
+
+        val bundle = Bundle()
+        bundle.putString("title", item.get(1))
+        bundle.putString("url", item.get(2))
+        (activity as MainActivity?)!!.onUpdateLogEvent(bundle,"brokers_visited",true)
+
+        val intent: Intent? = Intent(activity, WebActivity::class.java)
+        intent?.putExtra("title", item.get(1))
+        intent?.putExtra("url", item.get(2))
         startActivity(intent)
     }
 }
