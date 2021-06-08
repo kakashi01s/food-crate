@@ -52,85 +52,161 @@
                 />
         </LinearLayout>
 
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:padding="30dp"
+     android:layout_gravity="center">
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_gravity="center">
+
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/card_food"
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             app:cardBackgroundColor="@color/orange"
+             app:cardCornerRadius="12dp"
+
+             >
+
+             <ImageView
+                 android:layout_width="130dp"
+                 android:layout_height="130dp"
+                 android:layout_gravity="center"/>
+         </androidx.cardview.widget.CardView>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Food"
+             android:layout_gravity="center"
+             android:textStyle="bold"
+             android:textSize="30dp"/>
+
+     </LinearLayout>
+     <Space
+         android:layout_width="50dp"
+         android:layout_height="130dp"/>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_gravity="center">
+
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/card_shopping"
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             app:cardBackgroundColor="#FF5252"
+             app:cardCornerRadius="12dp"
+             >
+
+
+             <ImageView
+                 android:layout_width="130dp"
+                 android:layout_height="130dp"
+                 android:layout_gravity="center"/>
+         </androidx.cardview.widget.CardView>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Shopping"
+             android:layout_gravity="center"
+             android:textStyle="bold"
+             android:textSize="30dp"/>
+
+     </LinearLayout>
+
+
+
+
+ </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="30dp"
+            android:layout_gravity="center">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_grid"
-                    app:tint="@color/colorPrimary" />
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_grocery"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#7C4DFF"
+                    app:cardCornerRadius="12dp"
+                    >
+
+
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"/>
+                </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/top_trending"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black_75"
-                    android:fontFamily="@font/montserrat_semibold" />
+                    android:text="Grocery"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="30dp"/>
+
+            </LinearLayout>
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="130dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_deals"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#448AFF"
+                    app:cardCornerRadius="12dp"
+                    >
+
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"/>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deals"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="30dp"/>
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvTrending"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:layout_marginTop="5dp"/>
+
+
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_grid"
-                    app:tint="@color/colorPrimary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/all_apps"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black_75"
-                    android:fontFamily="@font/montserrat_semibold" />
-
-            </LinearLayout>
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvAllApps"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:layout_marginTop="5dp"/>
 
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

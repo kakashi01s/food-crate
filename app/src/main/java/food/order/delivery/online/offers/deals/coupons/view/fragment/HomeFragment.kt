@@ -1,5 +1,6 @@
 package food.order.delivery.online.offers.deals.coupons.view.fragment
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -34,10 +36,12 @@ import food.order.delivery.online.offers.deals.coupons.base.BaseFragment
 import food.order.delivery.online.offers.deals.coupons.utils.Constants
 import food.order.delivery.online.offers.deals.coupons.view.MainActivity
 import food.order.delivery.online.offers.deals.coupons.view.WebActivity
+import food.order.delivery.online.offers.deals.coupons.view.adapter.CategoryStoresAdapter
 import food.order.delivery.online.offers.deals.coupons.view.adapter.home.AllAppsAdapter
 import food.order.delivery.online.offers.deals.coupons.view.adapter.home.TrendingAdapter
 import food.order.delivery.online.offers.deals.coupons.view.listener.AllAppsItemClickListener
 import food.order.delivery.online.offers.deals.coupons.view.listener.home.TrendingItemClickListener
+import food.order.delivery.online.offers.deals.coupons.viewmodel.CategoryViewModel
 import food.order.delivery.online.offers.deals.coupons.viewmodel.HomeViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -58,6 +62,10 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
 
     var carouselView: CarouselView? = null
 
+    var rvCategoryStores: RecyclerView? = null
+    var categoryStoresAdapter: CategoryStoresAdapter? = null
+    var categoryViewModel: CategoryViewModel? = null
+
     var rvAllApps: RecyclerView? = null
     var allAppsAdapter: AllAppsAdapter? = null
     var homeViewModel: HomeViewModel? = null
@@ -71,11 +79,19 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
     private var nativeAdFB1: NativeAd? = null
     private var nativeAdFB2: NativeAd? = null
 
+
+    var dialog: Dialog? = null
+
+    private var nativeAdFB3: NativeAd? = null
     private var nativeAdLayout: NativeAdLayout? = null
     private var adView: LinearLayout? = null
 
 
     var carouselImagesList: ArrayList<List<String>>? = ArrayList()
+    var foodsList: ArrayList<List<String>>? = ArrayList()
+    var shoppingList: ArrayList<List<String>>? = ArrayList()
+    var dealsList: ArrayList<List<String>>? = ArrayList()
+    var groceryList: ArrayList<List<String>>? = ArrayList()
 //
 //    var nativeAdHome1: UnifiedNativeAd? = null
 //    var nativeAdHome2: UnifiedNativeAd? = null
@@ -106,6 +122,8 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
 
         initViews(view)
 
+        dialog = Dialog(context!!)
+
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
 
         setRecyclerView()
@@ -114,9 +132,9 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
 
         homeViewModel?.loadData()
 
-        homeViewModel!!.allAppsLiveData.observe(this, Observer { t ->
+        homeViewModel!!.foodLiveData.observe(this, Observer { t ->
             Log.d("TAG", "HomeFragment Live allAppsLiveData$t")
-            allAppsAdapter?.setItems(t)
+            foodsList!!.addAll(t!!)
         })
 
         homeViewModel!!.carouselImagesLiveData.observe(this, Observer { t ->
@@ -125,10 +143,33 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
             onLoadCarouselImages()
         })
 
-        homeViewModel!!.trendingLiveData.observe(this, Observer { t ->
+        homeViewModel!!.shoppingLiveData.observe(this, Observer { t ->
             Log.d("TAG", "HomeFragment Live trendingLiveData $t")
-            trendingAdapter!!.setItems(t)
+            shoppingList!!.addAll(t!!)
         })
+
+        homeViewModel!!.groceryLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "HomeFragment Live trendingLiveData $t")
+            groceryList!!.addAll(t!!)
+        })
+
+        homeViewModel!!.dealsLiveData.observe(this, Observer { t ->
+            Log.d("TAG", "HomeFragment Live trendingLiveData $t")
+            dealsList!!.addAll(t!!)
+        })
+        card_shopping!!.setOnClickListener {
+            onShowStores(shoppingList!!,view)
+        }
+
+        card_food!!.setOnClickListener {
+            onShowStores(foodsList!!,view)
+        }
+        card_grocery!!.setOnClickListener {
+            onShowStores(groceryList!!,view)
+        }
+        card_deals!!.setOnClickListener {
+            onShowStores(dealsList!!,view)
+        }
 
 
         if (firebaseRemoteConfig!!.getBoolean(Constants().SHOW_ADS)) {
@@ -138,11 +179,12 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
         }
     }
 
+
+
     fun initViews(view: View) {
         firebaseAnalytics = FirebaseAnalytics.getInstance(activity!!)
         carouselView = view.findViewById(R.id.cvHome)
-        rvAllApps = view.findViewById(R.id.rvAllApps)
-        rvTrending = view.findViewById(R.id.rvTrending)
+
     }
 
     fun setRecyclerView() {
@@ -159,6 +201,26 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
             rvTrending?.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
             rvTrending?.adapter = trendingAdapter
         }
+
+    }
+    fun onShowStores(list: ArrayList<List<String>>, view: View) {
+        dialog!!.setContentView(R.layout.dialog_show_stores)
+
+        dialog!!.window!!.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.MATCH_PARENT
+        );
+
+        rvCategoryStores = dialog!!.findViewById(R.id.rvCategoryStores)
+
+        setRecyclerView()
+
+        categoryStoresAdapter!!.setItems(list)
+        if(firebaseRemoteConfig!!.getBoolean(Constants().SHOW_ADS)){
+            onLoadFBNativeAdDialog(view, context!!, dialog!!)
+        }
+
+        dialog!!.show()
 
     }
 
@@ -302,6 +364,60 @@ class FragmentHome : BaseFragment(), AllAppsItemClickListener<List<String>>,
 
         nativeAdFB2!!.loadAd(
             nativeAdFB2!!.buildLoadAdConfig()
+                .withAdListener(nativeAdListener)
+                .build()
+        );
+    }
+    fun onLoadFBNativeAdDialog(view: View, context: Context,dialog: Dialog) {
+        nativeAdFB3 = NativeAd(context, Constants().getFbNativeTopicDailog())
+        val nativeAdListener: NativeAdListener = object : NativeAdListener {
+            override fun onError(p0: Ad?, p1: AdError?) {
+                Log.d("TAG", "onError: onLoadFBNativeAd1 " + p1!!.errorMessage)
+            }
+
+            override fun onAdLoaded(ad: Ad?) {
+
+                // Race condition, load() called again before last ad was displayed
+                if (nativeAdFB3 == null || nativeAdFB3 !== ad) {
+                    return
+                }
+                // Inflate Native Ad into Container
+
+                // Add the Ad view into the ad container.
+                nativeAdLayout = dialog.findViewById(R.id.native_ad_container_dialog)
+                val inflater = LayoutInflater.from(context)
+                // Inflate the Ad view.  The layout referenced should be the one you created in the last step.
+                adView =
+                    inflater.inflate(
+                        R.layout.native_ad_layout,
+                        nativeAdLayout,
+                        false
+                    ) as LinearLayout
+                nativeAdLayout!!.addView(adView)
+
+                inflateAd(nativeAdFB3!!, adView!!)
+
+                val adChoicesContainer: LinearLayout = dialog.findViewById(R.id.ad_choices_container)
+                val adOptionsView = AdOptionsView(context, nativeAdFB3, nativeAdLayout)
+                adChoicesContainer.removeAllViews()
+                adChoicesContainer.addView(adOptionsView, 0)
+            }
+
+            override fun onAdClicked(p0: Ad?) {
+                Log.d("TAG", "onAdClicked: onLoadFBNativeAd1")
+            }
+
+            override fun onLoggingImpression(p0: Ad?) {
+                Log.d("TAG", "onLoggingImpression: onLoadFBNativeAd1")
+            }
+
+            override fun onMediaDownloaded(p0: Ad?) {
+                Log.d("TAG", "onMediaDownloaded: onLoadFBNativeAd1")
+            }
+        }
+
+        nativeAdFB3!!.loadAd(
+            nativeAdFB3!!.buildLoadAdConfig()
                 .withAdListener(nativeAdListener)
                 .build()
         );

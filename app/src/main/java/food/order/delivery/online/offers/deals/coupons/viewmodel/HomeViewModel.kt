@@ -17,8 +17,10 @@ class HomeViewModel : ViewModel() {
 
     var allAppsLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
     var carouselImagesLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
-    var trendingLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
-    var usefulappsLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
+    var foodLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
+    var shoppingLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
+    var groceryLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
+    var dealsLiveData: MutableLiveData<List<List<String>>?> = MutableLiveData()
     private var context: Context? = null
     var compositeDisposable: CompositeDisposable? = null
 
@@ -26,12 +28,13 @@ class HomeViewModel : ViewModel() {
         Log.d("TAG", "loadData: ")
         compositeDisposable = CompositeDisposable()
         fetchCarouselImages()
-        fetchTrendingData()
-        fetchAllApps()
-        fetchUsefulApps()
+        fetchfoodData()
+        fetchshopping()
+        fetchgrocery()
+        fetchdeals()
     }
 
-    private fun fetchAllApps(){
+    private fun fetchfoodData(){
         Log.d("TAG", "fetchAllApps: ")
         val singleton: Singleton? = Singleton.get()
         val dataService: DataService? = singleton!!.getDataService()
@@ -45,7 +48,7 @@ class HomeViewModel : ViewModel() {
             })
             ?.subscribe(Consumer { t ->
                 Log.d("TAG", "fetchAllApps Response ${t.getValues()}")
-                changeAllAppsDataSet(t.getValues())
+                changefoodDataSet(t.getValues())
             })
 
         if (disposable != null) {
@@ -77,7 +80,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    private fun fetchUsefulApps(){
+    private fun fetchshopping(){
         Log.d("TAG", "fetchUsefulApps: ")
 
         val dataService by lazy {
@@ -93,7 +96,7 @@ class HomeViewModel : ViewModel() {
             })
             ?.subscribe(Consumer { t ->
                 Log.d("TAG", "fetchUsefulApps Response ${t.getValues()}")
-                changeUsefulAppsDataSet(t.getValues())
+                changeshoppingDataSet(t.getValues())
             })
 
         if (disposable != null) {
@@ -101,11 +104,8 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    fun changeUsefulAppsDataSet(trendingList: List<List<String>>?){
-        usefulappsLiveData.value = trendingList
-    }
 
-    private fun fetchTrendingData(){
+    private fun fetchgrocery(){
         Log.d("TAG", "fetchTrendingData: ")
 
         val dataService by lazy {
@@ -121,7 +121,7 @@ class HomeViewModel : ViewModel() {
             })
             ?.subscribe(Consumer { t ->
                 Log.d("TAG", "fetchTrendingData Response ${t.getValues()}")
-                changeTrendingDataSet(t.getValues())
+                changegroceryDataSet(t.getValues())
             })
 
         if (disposable != null) {
@@ -129,17 +129,47 @@ class HomeViewModel : ViewModel() {
         }
     }
 
+    private fun fetchdeals(){
+        Log.d("TAG", "fetchTrendingData: ")
 
-    fun changeAllAppsDataSet(allAppsList: List<List<String>>?){
-        allAppsLiveData.value = allAppsList
+        val dataService by lazy {
+            DataFactory.create()
+        }
+
+        val disposable: Disposable?
+        disposable = dataService?.fetchAllApps(DataFactory().URL_TRENDING_DATA, DataFactory().KEY)
+            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(AndroidSchedulers.mainThread())
+            ?.doOnError(Consumer { t ->
+                Log.d("TAG", "fetchTrendingData Error ${t.localizedMessage}")
+            })
+            ?.subscribe(Consumer { t ->
+                Log.d("TAG", "fetchTrendingData Response ${t.getValues()}")
+                changedealsDataSet(t.getValues())
+            })
+
+        if (disposable != null) {
+            compositeDisposable?.add(disposable)
+        }
+    }
+
+    private fun changedealsDataSet(dealsList: List<List<String>>?) {
+    dealsLiveData.value = dealsList
+    }
+
+    fun changeshoppingDataSet(shoppingList: List<List<String>>?){
+        shoppingLiveData.value = shoppingList
     }
 
     fun changeCarouselDataSet(carouselList: List<List<String>>?){
         carouselImagesLiveData.value = carouselList
     }
 
-    fun changeTrendingDataSet(trendingList: List<List<String>>?){
-        trendingLiveData.value = trendingList
+    fun changegroceryDataSet(groceryList: List<List<String>>?){
+        groceryLiveData.value = groceryList
+    }
+    fun changefoodDataSet(foodList: List<List<String>>?){
+        foodLiveData.value = foodList
     }
 
 
